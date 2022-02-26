@@ -6,7 +6,7 @@
 /*   By: jchakir <jchakir@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 18:40:26 by jchakir           #+#    #+#             */
-/*   Updated: 2022/02/26 13:33:06 by jchakir          ###   ########.fr       */
+/*   Updated: 2022/02/26 15:39:10 by jchakir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,12 @@ t_stack	*ft_init_stacks(char const **argv)
 	stack = (t_stack *)malloc(sizeof(t_stack));
 	if (! stack)
 		ft_perror_then_exit(MALLOC_ERROR);
-	stack->a = (t_list **)malloc(sizeof(t_list *) * 3);
+	stack->a = (t_list **)malloc(sizeof(t_list *) * 2);
 	if (! stack->a)
 		ft_perror_then_exit(MALLOC_ERROR);
 	stack->b = stack->a + 1;
-	stack->temp = stack->a + 2;
 	*stack->a = NULL;
 	*stack->b = NULL;
-	*stack->temp = NULL;
 	while (*argv)
 	{
 		new_node = ft_lstnew(ft_custom_atoi(*argv));
@@ -37,11 +35,6 @@ t_stack	*ft_init_stacks(char const **argv)
 		argv++;
 	}
 	return (stack);
-}
-
-void ft_print_num(int num)
-{
-	printf("%d ", num);
 }
 
 int main(int argc, char const *argv[])
@@ -58,12 +51,5 @@ int main(int argc, char const *argv[])
 
 	ft_sort_algorithms(stack, argc - 1);
 
-	// if (ft_check_is_sorted(*stack->a))
-	// 	printf("is sorted\n");
-	// else
-	// 	printf("not sorted\n");
-
-
-	// system("leaks push_swap");
 	return 0;
 }
