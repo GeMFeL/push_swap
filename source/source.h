@@ -6,7 +6,7 @@
 /*   By: jchakir <jchakir@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 17:51:01 by jchakir           #+#    #+#             */
-/*   Updated: 2022/02/26 15:42:29 by jchakir          ###   ########.fr       */
+/*   Updated: 2022/02/26 15:52:21 by jchakir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 # include <unistd.h>
 # include <stdlib.h>
+# include <stdio.h>
+
 
 # define MALLOC_ERROR "malloc() Error"
 
