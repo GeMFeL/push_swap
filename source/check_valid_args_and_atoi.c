@@ -6,7 +6,7 @@
 /*   By: jchakir <jchakir@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 13:48:51 by jchakir           #+#    #+#             */
-/*   Updated: 2022/02/27 16:29:50 by jchakir          ###   ########.fr       */
+/*   Updated: 2022/02/27 19:50:48 by jchakir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static int	ft_is_a_integer(char *str)
 		return (0);
 	else if (ft_isdigit(*str))
 		str++;
-	else if ((*str == '-' || *str  == '+') && *(str + 1))
+	else if ((*str == '-' || *str == '+') && *(str + 1))
 		str++;
 	else
 		return (0);
@@ -45,7 +45,7 @@ int	ft_custom_atoi(char *str)
 
 	res = 0;
 	sign = 1;
-	if (*str == '-' || *str  == '+')
+	if (*str == '-' || *str == '+')
 		if (*str++ == '-')
 			sign = -1;
 	while (ft_isdigit(*str) && res < 2147483648)

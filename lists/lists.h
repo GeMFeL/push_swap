@@ -6,7 +6,7 @@
 /*   By: jchakir <jchakir@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 10:04:49 by jchakir           #+#    #+#             */
-/*   Updated: 2022/02/26 14:07:15 by jchakir          ###   ########.fr       */
+/*   Updated: 2022/02/27 18:59:35 by jchakir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 
 # include "../source/source.h"
 # include <stdlib.h>
-
-
 
 int		ft_lstsize(t_list *lst);
 t_list	*ft_lstlast(t_list *lst);
@@ -27,6 +25,5 @@ int		ft_lst_find_min(t_list *list);
 int		ft_lst_index_of(t_list *list, int content);
 int		ft_lst_index_of_min(t_list *list);
 int		ft_lst_index_of_max(t_list *list);
-
 
 #endif

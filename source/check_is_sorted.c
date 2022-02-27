@@ -6,7 +6,7 @@
 /*   By: jchakir <jchakir@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 18:08:59 by jchakir           #+#    #+#             */
-/*   Updated: 2022/02/15 18:15:51 by jchakir          ###   ########.fr       */
+/*   Updated: 2022/02/27 19:50:11 by jchakir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_check_is_sorted(t_list *list)
 {
-	t_list *next;
+	t_list	*next;
 
 	if (! list)
 		return (0);

@@ -6,7 +6,7 @@
 /*   By: jchakir <jchakir@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/26 16:29:55 by jchakir           #+#    #+#             */
-/*   Updated: 2022/02/26 16:40:50 by jchakir          ###   ########.fr       */
+/*   Updated: 2022/02/27 18:58:56 by jchakir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,6 @@ void	silent_rr(t_stack *stack)
 	*stack->a = head_node->next;
 	last_node->next = head_node;
 	head_node->next = NULL;
-
 	head_node = *stack->b;
 	last_node = ft_lstlast(head_node);
 	*stack->b = head_node->next;

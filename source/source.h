@@ -6,7 +6,7 @@
 /*   By: jchakir <jchakir@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 17:51:01 by jchakir           #+#    #+#             */
-/*   Updated: 2022/02/27 16:30:39 by jchakir          ###   ########.fr       */
+/*   Updated: 2022/02/27 19:51:36 by jchakir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,8 @@
 # include <stdlib.h>
 # include <stdio.h>
 
-
 # define MALLOC_ERROR "malloc() Error"
 # define ERROR "Error"
-
 
 typedef struct s_list
 {
@@ -44,6 +42,5 @@ int		ft_custom_atoi(char *str);
 void	ft_check_valid_args(char **argv);
 int		ft_check_is_sorted(t_list *list);
 int		ft_max(int num1, int num2);
-
 
 #endif

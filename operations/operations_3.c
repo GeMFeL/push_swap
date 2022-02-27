@@ -6,7 +6,7 @@
 /*   By: jchakir <jchakir@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 13:25:03 by jchakir           #+#    #+#             */
-/*   Updated: 2022/02/26 16:41:32 by jchakir          ###   ########.fr       */
+/*   Updated: 2022/02/27 19:31:46 by jchakir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,6 @@ void	rrr(t_stack *stack)
 	lastlast_node->next = NULL;
 	*stack->a = last_node;
 	last_node->next = head_node;
-
 	lastlast_node = ft_lst_lastlast(*stack->b);
 	head_node = *stack->b;
 	last_node = lastlast_node->next;

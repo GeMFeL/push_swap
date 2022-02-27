@@ -6,7 +6,7 @@
 /*   By: jchakir <jchakir@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/26 16:05:46 by jchakir           #+#    #+#             */
-/*   Updated: 2022/02/26 17:02:54 by jchakir          ###   ########.fr       */
+/*   Updated: 2022/02/27 19:53:04 by jchakir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,5 @@
 # include "source/source.h"
 # include "lists/lists.h"
 # include "checker_utils/checker_utils.h"
-
-
-
 
 #endif

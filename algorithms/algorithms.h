@@ -6,10 +6,9 @@
 /*   By: jchakir <jchakir@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 14:28:18 by jchakir           #+#    #+#             */
-/*   Updated: 2022/02/27 16:28:18 by jchakir          ###   ########.fr       */
+/*   Updated: 2022/02/27 18:32:27 by jchakir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #ifndef ALGORITHMS_H
 # define ALGORITHMS_H
@@ -25,6 +24,5 @@ void	reverse_rotate_temp(t_stack *stack);
 void	rotate_temp(t_stack *stack);
 void	ft_push_from_b_to_a(t_stack *stack);
 void	ft_sort_algorithms(t_stack *stack);
-
 
 #endif

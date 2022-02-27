@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   silent_operations_2.c                              :+:      :+:    :+:   */
+/*   operations_2.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jchakir <jchakir@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 13:21:19 by jchakir           #+#    #+#             */
-/*   Updated: 2022/02/26 13:45:54 by jchakir          ###   ########.fr       */
+/*   Updated: 2022/02/27 19:31:38 by jchakir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,6 @@ void	rr(t_stack *stack)
 	*stack->a = head_node->next;
 	last_node->next = head_node;
 	head_node->next = NULL;
-
 	head_node = *stack->b;
 	last_node = ft_lstlast(head_node);
 	*stack->b = head_node->next;

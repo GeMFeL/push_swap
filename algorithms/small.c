@@ -6,7 +6,7 @@
 /*   By: jchakir <jchakir@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 18:25:59 by jchakir           #+#    #+#             */
-/*   Updated: 2022/02/24 22:01:24 by jchakir          ###   ########.fr       */
+/*   Updated: 2022/02/27 18:55:13 by jchakir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,7 @@ static void	ft_four_nums(t_stack *stack)
 	int	index_of_min;
 
 	index_of_min = ft_lst_index_of_min(*stack->a);
-
 	ft_put_to_top_of_stack_a_by_index(stack, index_of_min);
-
 	pb(stack);
 	ft_tree_nums(stack);
 	pa(stack);
@@ -58,9 +56,7 @@ static void	ft_five_nums(t_stack *stack)
 	int	index_of_min;
 
 	index_of_min = ft_lst_index_of_min(*stack->a);
-
 	ft_put_to_top_of_stack_a_by_index(stack, index_of_min);
-
 	pb(stack);
 	ft_four_nums(stack);
 	pa(stack);

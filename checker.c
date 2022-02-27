@@ -6,7 +6,7 @@
 /*   By: jchakir <jchakir@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/26 16:04:41 by jchakir           #+#    #+#             */
-/*   Updated: 2022/02/27 17:14:48 by jchakir          ###   ########.fr       */
+/*   Updated: 2022/02/27 20:02:42 by jchakir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ static void	ft_follow_instactions(t_stack *stack)
 	}
 }
 
-static t_stack *ft_split_numbers(char *str)
+static t_stack	*ft_split_numbers(char *str)
 {
 	char	**numbers;
 	t_stack	*stack;
@@ -99,7 +99,7 @@ static t_stack *ft_split_numbers(char *str)
 	return (stack);
 }
 
-int main(int argc, char *argv[])
+int	main(int argc, char *argv[])
 {
 	t_stack	*stack;
 
@@ -112,8 +112,6 @@ int main(int argc, char *argv[])
 		ft_check_valid_args(argv + 1);
 		stack = ft_init_stacks(argv + 1);
 	}
-	if (ft_check_is_sorted(*stack->a))
-		ft_put_error_then_exit(ERROR);
 	ft_check_is_duplicated(*stack->a);
 	ft_follow_instactions(stack);
 	if (ft_check_is_sorted(*stack->a))
