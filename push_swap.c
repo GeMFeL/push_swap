@@ -6,7 +6,7 @@
 /*   By: jchakir <jchakir@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 18:40:26 by jchakir           #+#    #+#             */
-/*   Updated: 2022/02/27 20:05:30 by jchakir          ###   ########.fr       */
+/*   Updated: 2022/02/27 20:22:53 by jchakir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ int	main(int argc, char *argv[])
 	t_stack	*stack;
 
 	if (argc < 2)
-		ft_put_error_then_exit(ERROR);
+		return (0);
 	if (argc == 2)
 		stack = ft_split_numbers(argv[1]);
 	else
