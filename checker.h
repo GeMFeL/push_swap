@@ -1,22 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   checker.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jchakir <jchakir@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/12 10:32:40 by jchakir           #+#    #+#             */
-/*   Updated: 2022/02/26 18:31:02 by jchakir          ###   ########.fr       */
+/*   Created: 2022/02/26 16:05:46 by jchakir           #+#    #+#             */
+/*   Updated: 2022/02/26 17:02:54 by jchakir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#ifndef CHECKER_H
+# define CHECKER_H
 
 # include "source/source.h"
 # include "lists/lists.h"
-# include "operations/operations.h"
-# include "algorithms/algorithms.h"
+# include "checker_utils/checker_utils.h"
+
+
 
 
 #endif

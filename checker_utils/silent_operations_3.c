@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   operations_3.c                                     :+:      :+:    :+:   */
+/*   silent_operations_3.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jchakir <jchakir@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/15 13:25:03 by jchakir           #+#    #+#             */
-/*   Updated: 2022/02/26 16:41:32 by jchakir          ###   ########.fr       */
+/*   Created: 2022/02/26 16:30:24 by jchakir           #+#    #+#             */
+/*   Updated: 2022/02/27 16:56:48 by jchakir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "operations.h"
+#include "checker_utils.h"
 
 static t_list	*ft_lst_lastlast(t_list *list)
 {
@@ -25,7 +25,7 @@ static t_list	*ft_lst_lastlast(t_list *list)
 	return (list);
 }
 
-void	rra(t_stack *stack)
+void	silent_rra(t_stack *stack)
 {
 	t_list	*lastlast_node;
 	t_list	*head_node;
@@ -39,10 +39,9 @@ void	rra(t_stack *stack)
 	lastlast_node->next = NULL;
 	*stack->a = last_node;
 	last_node->next = head_node;
-	write(1, "rra\n", 4);
 }
 
-void	rrb(t_stack *stack)
+void	silent_rrb(t_stack *stack)
 {
 	t_list	*head_node;
 	t_list	*last_node;
@@ -56,10 +55,9 @@ void	rrb(t_stack *stack)
 	lastlast_node->next = NULL;
 	*stack->b = last_node;
 	last_node->next = head_node;
-	write(1, "rrb\n", 4);
 }
 
-void	rrr(t_stack *stack)
+void	silent_rrr(t_stack *stack)
 {
 	t_list	*head_node;
 	t_list	*last_node;
@@ -73,12 +71,10 @@ void	rrr(t_stack *stack)
 	lastlast_node->next = NULL;
 	*stack->a = last_node;
 	last_node->next = head_node;
-
 	lastlast_node = ft_lst_lastlast(*stack->b);
 	head_node = *stack->b;
 	last_node = lastlast_node->next;
 	lastlast_node->next = NULL;
 	*stack->b = last_node;
 	last_node->next = head_node;
-	write(1, "rrr\n", 4);
 }

@@ -1,22 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   strncmp.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jchakir <jchakir@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/12 10:32:40 by jchakir           #+#    #+#             */
-/*   Updated: 2022/02/26 18:31:02 by jchakir          ###   ########.fr       */
+/*   Created: 2021/11/19 20:15:03 by jchakir           #+#    #+#             */
+/*   Updated: 2022/02/26 18:39:44 by jchakir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "checker_utils.h"
 
-# include "source/source.h"
-# include "lists/lists.h"
-# include "operations/operations.h"
-# include "algorithms/algorithms.h"
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
+{
+	unsigned char	*ss1;
+	unsigned char	*ss2;
 
-
-#endif
+	ss1 = (unsigned char *)s1;
+	ss2 = (unsigned char *)s2;
+	if (! n)
+		return (0);
+	while (*ss1 && *ss2 && *ss1 == *ss2 && --n)
+	{
+		ss1++;
+		ss2++;
+	}
+	return (*ss1 - *ss2);
+}

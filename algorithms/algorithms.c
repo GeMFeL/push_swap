@@ -6,14 +6,17 @@
 /*   By: jchakir <jchakir@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 17:16:42 by jchakir           #+#    #+#             */
-/*   Updated: 2022/02/26 13:52:13 by jchakir          ###   ########.fr       */
+/*   Updated: 2022/02/27 15:46:59 by jchakir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "algorithms.h"
 
-void	ft_sort_algorithms(t_stack *stack, int size)
+void	ft_sort_algorithms(t_stack *stack)
 {
+	int	size;
+
+	size = ft_lstsize(*stack->a);
 	if (size < 6)
 	{
 		ft_small_stack(stack, size);

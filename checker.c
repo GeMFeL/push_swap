@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jchakir <jchakir@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/12 18:40:26 by jchakir           #+#    #+#             */
-/*   Updated: 2022/02/27 17:21:43 by jchakir          ###   ########.fr       */
+/*   Created: 2022/02/26 16:04:41 by jchakir           #+#    #+#             */
+/*   Updated: 2022/02/27 17:14:48 by jchakir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker.h"
 
 static t_stack	*ft_init_stacks(char **argv)
 {
@@ -35,6 +35,50 @@ static t_stack	*ft_init_stacks(char **argv)
 		argv++;
 	}
 	return (stack);
+}
+
+static int	ft_do_instraction(t_stack *stack, char *str)
+{
+	if (! ft_strncmp(str, "sa\n", 4))
+		silent_sa(stack);
+	else if (! ft_strncmp(str, "sb\n", 4))
+		silent_sb(stack);
+	else if (! ft_strncmp(str, "ss\n", 4))
+		silent_ss(stack);
+	else if (! ft_strncmp(str, "pa\n", 4))
+		silent_pa(stack);
+	else if (! ft_strncmp(str, "pb\n", 4))
+		silent_pb(stack);
+	else if (! ft_strncmp(str, "ra\n", 4))
+		silent_ra(stack);
+	else if (! ft_strncmp(str, "rb\n", 4))
+		silent_rb(stack);
+	else if (! ft_strncmp(str, "rr\n", 4))
+		silent_rr(stack);
+	else if (! ft_strncmp(str, "rra\n", 5))
+		silent_rra(stack);
+	else if (! ft_strncmp(str, "rrb\n", 5))
+		silent_rrb(stack);
+	else if (! ft_strncmp(str, "rrr\n", 5))
+		silent_rrr(stack);
+	else
+		return (0);
+	return (1);
+}
+
+static void	ft_follow_instactions(t_stack *stack)
+{
+	char	*instaction;
+
+	while (1)
+	{
+		instaction = get_next_line(0);
+		if (! instaction)
+			return ;
+		if (! ft_do_instraction(stack, instaction))
+			ft_put_error_then_exit(ERROR);
+		free(instaction);
+	}
 }
 
 static t_stack *ft_split_numbers(char *str)
@@ -71,6 +115,10 @@ int main(int argc, char *argv[])
 	if (ft_check_is_sorted(*stack->a))
 		ft_put_error_then_exit(ERROR);
 	ft_check_is_duplicated(*stack->a);
-	ft_sort_algorithms(stack);
+	ft_follow_instactions(stack);
+	if (ft_check_is_sorted(*stack->a))
+		write(1, "OK\n", 3);
+	else
+		write(1, "KO\n", 3);
 	return (0);
 }
