@@ -6,7 +6,7 @@
 /*   By: jchakir <jchakir@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 18:40:26 by jchakir           #+#    #+#             */
-/*   Updated: 2022/02/27 20:22:53 by jchakir          ###   ########.fr       */
+/*   Updated: 2022/02/28 11:16:45 by jchakir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,6 @@ static t_stack	*ft_split_numbers(char *str)
 		ft_put_error_then_exit(ERROR);
 	ft_check_valid_args(numbers);
 	stack = ft_init_stacks(numbers);
-	if (ft_lstsize(*stack->a) < 2)
-		ft_put_error_then_exit(ERROR);
 	ft_free_2d_pointer(numbers);
 	return (stack);
 }
