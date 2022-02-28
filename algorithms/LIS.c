@@ -6,71 +6,72 @@
 /*   By: jchakir <jchakir@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 17:04:49 by jchakir           #+#    #+#             */
-/*   Updated: 2022/02/26 13:29:18 by jchakir          ###   ########.fr       */
+/*   Updated: 2022/02/28 13:49:21 by jchakir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "algorithms.h"
 
-static int	ft_set_numbers_and_lis(t_stack *stack, int **lis, int **numbers)
+static int	*ft_set_just_lis_numbers(int *lis, int *numbers, \
+										int size, int lis_max_index)
 {
-	t_list	*list;
-	int		i;
-	int		*_numbers;
-	int		*_lis;
-	int		size;
-
-	size = ft_lstsize(*stack->a);
-	_numbers = (int *)malloc(size * sizeof(int));
-	_lis = (int *)malloc(size * sizeof(int));
-	if (! _numbers || ! _lis)
-		ft_perror_then_exit(MALLOC_ERROR);
-	i = 0;
-	list = *stack->a;
-	while (i < size)
-	{
-		_numbers[i] = list->content;
-		_lis[i] = 1;
-		list = list->next;
-		i++;
-	}
-	*numbers = _numbers;
-	*lis = _lis;
-	return (size);
-}
-
-static int	ft_find_max_in_array(int *array, int size)
-{
-	int	max;
+	int	*just_lis_numbers;
 	int	i;
 
-	max = array[0];
-	i = 1;
+	i = 0;
+	just_lis_numbers = (int *)malloc(sizeof(int) * lis_max_index);
+	if (! just_lis_numbers)
+		ft_perror_then_exit(MALLOC_ERROR);
+	while (size--)
+	{
+		if (lis[size] == lis_max_index)
+		{
+			just_lis_numbers[i] = numbers[size];
+			lis_max_index--;
+			i++;
+		}
+	}
+	return (just_lis_numbers);
+}
+
+static int	ft_is_number_in_array(int *array, int size, int number)
+{
+	int	i;
+
+	i = 0;
 	while (i < size)
 	{
-		if (max < array[i])
-			max = array[i];
+		if (array[i] == number)
+			return (1);
 		i++;
 	}
-	return (max);
+	return (0);
 }
 
 static void	ft_put_non_lis_numbers_to_satck_b(t_stack *stack, int *lis, \
 											int *numbers, int size)
 {
-	int	lis_max_index;
+	t_list	*head_node;
+	int		lis_size;
+	int		*just_lis_numbers;
+	int		i;
 
-	lis_max_index = ft_find_max_in_array(lis, size);
-	while (size--)
+	lis_size = ft_find_max_in_array(lis, size);
+	just_lis_numbers = ft_set_just_lis_numbers(lis, numbers, size, lis_size);
+	i = 0;
+	while (i < lis_size)
 	{
-		if (lis[size] != lis_max_index)
+		head_node = *stack->a;
+		if (ft_is_number_in_array(just_lis_numbers, \
+									lis_size, head_node->content))
 		{
-			ft_put_element_to_top_of_stack_a(stack, numbers[size]);
-			pb(stack);
+			ra(stack);
+			i++;
 		}
 		else
-			lis_max_index--;
+			pb(stack);
 	}
+	free(just_lis_numbers);
 }
 
 void	ft_longest_increasing_subsequence(t_stack *stack)

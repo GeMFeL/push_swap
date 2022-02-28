@@ -6,7 +6,7 @@
 #    By: jchakir <jchakir@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/16 15:30:01 by jchakir           #+#    #+#              #
-#    Updated: 2022/02/27 16:52:46 by jchakir          ###   ########.fr        #
+#    Updated: 2022/02/28 13:31:01 by jchakir          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ MANDA_FILES += operations/operations_1.c operations/operations_2.c \
 			operations/operations_3.c operations/put_to_top.c \
 			operations/put_to_top_in_both.c operations/put_to_top_in_both_utils.c
 MANDA_FILES += algorithms/small.c algorithms/algorithms.c algorithms/LIS.c \
-			algorithms/calc_min_instractions.c algorithms/push_b_to_a.c 
+			algorithms/calc_min_instractions.c algorithms/push_b_to_a.c algorithms/LIS_utils.c 
 MANDA_FILES += push_swap.c 
 
 BONUS_FILES = $(FILES)
