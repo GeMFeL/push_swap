@@ -6,7 +6,7 @@
 /*   By: jchakir <jchakir@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 17:04:49 by jchakir           #+#    #+#             */
-/*   Updated: 2022/02/28 13:49:21 by jchakir          ###   ########.fr       */
+/*   Updated: 2022/02/28 15:23:36 by jchakir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,7 @@ static int	*ft_set_just_lis_numbers(int *lis, int *numbers, \
 										int size, int lis_max_index)
 {
 	int	*just_lis_numbers;
-	int	i;
 
-	i = 0;
 	just_lis_numbers = (int *)malloc(sizeof(int) * lis_max_index);
 	if (! just_lis_numbers)
 		ft_perror_then_exit(MALLOC_ERROR);
@@ -26,15 +24,14 @@ static int	*ft_set_just_lis_numbers(int *lis, int *numbers, \
 	{
 		if (lis[size] == lis_max_index)
 		{
-			just_lis_numbers[i] = numbers[size];
 			lis_max_index--;
-			i++;
+			just_lis_numbers[lis_max_index] = numbers[size];
 		}
 	}
 	return (just_lis_numbers);
 }
 
-static int	ft_is_number_in_array(int *array, int size, int number)
+static int	ft_is_number_in_array(int array[], int size, int number)
 {
 	int	i;
 
@@ -54,20 +51,15 @@ static void	ft_put_non_lis_numbers_to_satck_b(t_stack *stack, int *lis, \
 	t_list	*head_node;
 	int		lis_size;
 	int		*just_lis_numbers;
-	int		i;
 
 	lis_size = ft_find_max_in_array(lis, size);
 	just_lis_numbers = ft_set_just_lis_numbers(lis, numbers, size, lis_size);
-	i = 0;
-	while (i < lis_size)
+	while (size--)
 	{
 		head_node = *stack->a;
 		if (ft_is_number_in_array(just_lis_numbers, \
 									lis_size, head_node->content))
-		{
 			ra(stack);
-			i++;
-		}
 		else
 			pb(stack);
 	}
